@@ -1,5 +1,7 @@
 // Referência ao formulário
 const loginForm = document.getElementById('login-form');
+console.log(loginForm);
+
 // Referência à mensagem de erro
 const errorMessage = document.getElementById('error-message');
 
@@ -8,7 +10,7 @@ const validUsername = "Emizinha";
 const validPassword = "Emizinha123";
 
 // Adiciona um evento de submissão ao formulário
-loginForm.addEventListener('submit', function(event) {
+loginForm.addEventListener('click', function(event) {
     event.preventDefault(); // Previne o envio padrão do formulário
 
     // Obtém os valores inseridos pelo usuário
@@ -16,10 +18,17 @@ loginForm.addEventListener('submit', function(event) {
     const enteredPassword = document.getElementById('password').value;
 
     // Verifica se as credenciais são válidas
+    console.log(enteredUsername, validUsername, enteredPassword, validPassword);
+    
+
     if (enteredUsername === validUsername && enteredPassword === validPassword) {
+        console.log("sucesso");
+        
         // Redireciona para a página inicial
         window.location.href = "home.html";
     } else {
+        console.log("!sucesso");
+        
         // Exibe a mensagem de erro
         errorMessage.style.display = "block";
     }
