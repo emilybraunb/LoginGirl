@@ -1,3 +1,4 @@
+
 // Referência ao formulário
 const loginForm = document.getElementById('login-form');
 console.log(loginForm);
@@ -30,6 +31,10 @@ loginForm.addEventListener('click', function(event) {
         console.log("!sucesso");
         
         // Exibe a mensagem de erro
-        errorMessage.style.display = "block";
+       // alert('usuário ou senha incorretos')
+       // Exibe a mensagem de erro personalizada
+       errorMessage.textContent = "Usuário ou senha incorretos. Tente novamente.";
+       errorMessage.style.display = "block";
+       errorMessage.style.color = "red";
     }
 });
